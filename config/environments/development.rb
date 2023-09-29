@@ -67,4 +67,9 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # https://github.com/rails/rails/issues/12438
+  # https://gist.github.com/indiesquidge/b836647f851179589765
+  config.action_dispatch.tld_length = 0
+
 end

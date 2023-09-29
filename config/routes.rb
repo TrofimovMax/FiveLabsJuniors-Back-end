@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  resources :courses_categories
-  resources :categories
-  resources :courses
-  #resources :courses_сategories
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  constraints subdomain: 'api' do
+    if Rails.env.development?
+      mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
+    end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
-  #root 'categories#index'
+    post "/graphql", to: "graphql#execute"
+  end
 end
