@@ -2,5 +2,13 @@
 
 require_relative "config/environment"
 
+# use Rack::Cors do
+#   allow do
+#     origins 'localhost:3000', 'localhost:8000',
+#             /\Ahttp:\/\/192\.168\.0\.\d{1,3}(:\d+)?\z/
+#
+#     end
+# end
+
 run Rails.application
 Rails.application.load_server
